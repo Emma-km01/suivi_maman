@@ -1,0 +1,102 @@
+:root {
+    --pink: #e9899e;
+    --blue-bg: #e8f0f8;
+    --gray-dark: #333;
+    --gray-light: #757575;
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Arial', sans-serif; }
+
+body { background-color: #fffafa; color: var(--gray-dark); line-height: 1.6; }
+
+/* Header & Nav */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: var(--white);
+}
+
+.logo { display: flex; align-items: center; font-weight: bold; color: var(--pink); gap: 8px; }
+.logo img { height: 35px; }
+
+nav { display: flex; gap: 20px; flex-wrap: wrap; }
+nav a { text-decoration: none; color: var(--gray-dark); font-size: 0.9rem; transition: 0.3s; }
+nav a:hover, nav a.active { color: var(--pink); border-bottom: 2px solid var(--pink); }
+
+/* Titre Principal (H1 des images) */
+.main-title {
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 2rem 10%;
+    font-weight: 800;
+}
+
+/* Formulaires & Cartes Bleues (IMG_0869, 0870, 0871) */
+.blue-section {
+    background-color: var(--blue-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+input, select {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    font-size: 1rem;
+}
+
+.btn-submit {
+    background-color: var(--pink);
+    color: white;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* Responsive Grid (IMG_0872) */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile */
+    gap: 20px;
+    padding: 2rem 5%;
+}
+
+@media (min-width: 768px) { .grid-container { grid-template-columns: repeat(3, 1fr); } }
+
+.card-action {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+/* Footer (IMG_0872 bas) */
+footer {
+    background-color: #b3cfe4;
+    padding: 2rem 5%;
+    margin-top: 4rem;
+}
+
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-item { min-width: 200px; }
