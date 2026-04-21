@@ -65,6 +65,7 @@ nav a:hover, nav a.active {
 .hero {
     display: flex;
     background-color: #E5EEF7;
+    justify-content: space-between;
     h1 {
     font-size: 60px;
     }
@@ -73,10 +74,7 @@ nav a:hover, nav a.active {
     margin-left: 50px;
     padding-top: 40px;
 }
-.hero-img {
-        margin-left: 50%;
-        
-    }
+
 .btn-accueil {
     background-color: #FD7E97;
     color: white;
@@ -141,11 +139,12 @@ input, select {
 /* Responsive Grid (IMG_0872) */
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr; /* Mobile */
-    gap: 20px;
-    padding: 32px 5%;
+    justify-items: center;
+    gap: 60px;
+    width: 100%;
+    padding: 5%;
     img {
-        width: 200px;
+        width: 100px;
         height: auto;
     }
 }
@@ -158,11 +157,112 @@ input, select {
 }
 
 .card-action {
+    align-items: center;
     background: white;
-    padding: 32px;
     border-radius: 20px;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    width: 70%;
+    bleu {
+        background-color: #757575;
+    }
+    
+}
+
+.card-action.bleu {
+    background-color: #E5EEF7;
+}
+
+.card-action.rose {
+    background-color: #FFE4E9;
+}
+
+.card-action.gris {
+    background-color: #E5E5E5;
+}
+
+.btn-bleu {
+    background-color: #1293D9;
+    border: 1px;
+    height: 10%;
+    width: 20%;
+    color: white;
+    font-size: 110%;
+    border-radius: 20px;
+}
+
+.btn-rose {
+    background-color: #FD7E97;
+    border: 1px;
+    height: 10%;
+    width: 20%;
+    color: white;
+    font-size: 110%;
+    border-radius: 20px;
+}
+
+.btn-gris {
+    background-color: #6D7173;
+    border: 1px;
+    height: 10%;
+    width: 20%;
+    color: white;
+    font-size: 110%;
+    border-radius: 20px;
+}
+
+
+  
+.recent {
+    display: flex;
+    flex-direction: column; /* Les articles s'empilent verticalement */
+    align-items: center;    /* Centre les articles horizontalement */
+    gap: 30px;              /* Crée l'espace entre l'article 1 et l'article 2 */
+    margin: 0 auto;      /* Espace extérieur haut/bas et centrage du bloc */
+    width: 90%;
+    a {
+        color: #1293D9;
+    }
+}
+
+.recent-articles{
+    display: flex;
+}
+.recent-articles img {
+        width: 120px;
+        height: 90px;
+        border: 1px;
+        background-color: #A7CAE1;
+        border-radius: 5%;
+    }
+
+h2 {
+        font-size: 40px;
+        margin-left: 5%;
+    }
+
+
+.recent-articles.case1 {
+    background-color: #E5EEF7;
+    border: 1px;
+    border-radius: 20px;
+    gap: 10%;
+    padding: 50px;
+    width: 90%;
+    align-items: center;
+}
+
+#bloc {
+    width: 110px;
+}
+.recent-articles.case2 {
+    background-color: #E5EEF7;
+    border: 1px;
+    border-radius: 20px;
+    gap: 10%;
+    padding: 50px;
+    width: 90%;
+    align-items: center;
 }
 
 /* Footer (IMG_0872 bas) */
