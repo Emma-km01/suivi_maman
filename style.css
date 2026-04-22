@@ -32,7 +32,6 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    gap: 8px;
 }
 .logo img {
     height: 100px;
@@ -234,13 +233,11 @@ input, select {
         border: 1px;
         background-color: #A7CAE1;
         border-radius: 5%;
-    }
-
-h2 {
+        h2 {
         font-size: 40px;
         margin-left: 5%;
     }
-
+    }
 
 .recent-articles.case1 {
     background-color: #E5EEF7;
@@ -264,21 +261,98 @@ h2 {
     width: 90%;
     align-items: center;
 }
+main {
+    margin-bottom: 3%;
+}
 
+/*rdv.hml*/
+.page-intro {
+    margin-left: 50px;
+    padding-top: 40px;
+}
+
+.btn-supprimer {
+    background-color: #FD7E97;
+    color: white;
+    width: 140px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: #FD7E97;
+    margin-top: 30px;
+}
+
+.btn-ajouter {
+    background-color: #1293D9;
+    color: white;
+    width: 140px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: #FD7E97;
+    margin-top: 30px;
+}
+
+.btn-modifier {
+    background-color: #6D7173;
+    color: white;
+    width: 140px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: #FD7E97;
+    margin-top: 30px;
+}
+
+.rendv {
+    flex-direction: column; /* Les articles s'empilent verticalement */
+    align-items: center;    /* Centre les articles horizontalement */
+    gap: 30px;              /* Crée l'espace entre l'article 1 et l'article 2 */
+    margin: 0 auto;      /* Espace extérieur haut/bas et centrage du bloc */
+    width: 90%;
+}
+
+.doc {
+    display: flex;
+    border: 1px;
+    margin-bottom: 5%;
+    background-color: #E5EEF7;
+    gap: 5%;
+    height: 400px;
+}
+
+.doc img {
+    border: 1px;
+    background-color: #68c5ff5d;
+    height: 60%;
+    width: 15%;
+    height: 100%;
+}
+
+#doc1 {
+}
+
+#const {
+}
 /* Footer (IMG_0872 bas) */
 footer {
-    background-color: #b3cfe4;
-    padding: 2rem 5%;
-    margin-top: 4rem;
+    background-color: #A7CAE1;
+    padding: 5%;
 }
 
-.footer-grid {
+#footer-shared{
+    text-align: center;
+    padding: 2%;
+}
+
+#ico {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
+    align-items: center;
 }
 
-.footer-item {
-    min-width: 200px;
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 30%;
+    padding: 2%;
 }

@@ -1,30 +1,60 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Mes Rendez-vous</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <div class="logo"><img src="./images_suivi/logo.png" alt=""></div>
         <nav>
-            <a href="accueil.html" class="active">Accueil</a>
-            <a href="rdv.html">Rendez-vous</a>
+            <a href="accueil.html">Accueil</a>
+            <a href="rdv.html" class="active">Rendez-vous</a>
             <a href="suivi.html">Grossesse</a>
             <a href="ap_accouchement.html">Après accouchement</a>
         </nav>
     </header>
     <main>
-        <div class="page-intro">
-            <h1>Mes rendez-vous</h1>
-            <p>Ajouter, consulter et gérez facilement vos rendez-vous.</p>
-            <img src="cal_grand.png" alt="" class="bg-cal">
+        <div class="hero">
+            <div class="page-intro">
+                <h1>Mes rendez-vous</h1>
+                <p>Ajouter, consulter et gérez facilement vos rendez-vous.</p>
+            </div>
+            <img src="./images_suivi/calendrier2.png" alt="" class="bg-cal">
         </div>
-        <h2>Automatiques rendez-vous</h2>
-        <div id="liste-rdv-dynamique"></div> <p class="info-note">⚠️ Pensez à enregistrer vos symptômes ou questions avant votre rendez-vous.</p>
+
+        <h1>Automatisez vos rendez-vous</h1>
+
+        <section class="rendv">
+            <div class="doc">
+                <img src="./images_suivi/doc1.png" id="doc1">
+                <div id="const">
+                    <h1>Consultaion sage-femme</h1>
+                    <h2>(Ajouter un rendez-vous)</h2>
+                    <button class="btn-ajouter" onclick="goTo('rdv.html')">+ Ajouter</button>
+                    <button class="btn-modifier" onclick="goTo('rdv.html')">+ Modifier</button>
+                    <button class="btn-supprimer" onclick="goTo('rdv.html')">+ Supprimer</button>
+                </div>
+            </div>
+            <div class="doc">
+                <img src="./images_suivi/doc2.png" alt="">
+                <div id="const">
+                    <h1>Consultation gynécologue</h1>
+                    <h2>(Ajouter un rendez-vous)</h2>
+                    <button class="btn-ajouter" onclick="goTo('rdv.html')">+ Ajouter</button>
+                    <button class="btn-modifier" onclick="goTo('rdv.html')">+ Modifier</button>
+                    <button class="btn-supprimer" onclick="goTo('rdv.html')">+ Supprimer</button>
+                </div>
+            </div>
+        </section>
+        <div id="liste-rdv-dynamique"></div>
+        <p class="info-note">⚠️ Pensez à enregistrer vos symptômes ou questions avant votre rendez-vous.</p>
     </main>
     <footer id="footer-shared"></footer>
     <script src="script.js"></script>
 </body>
+
 </html>
