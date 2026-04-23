@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suivi Grossesse - Suivi Maman</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="logo.png" alt="Logo"> 
-            <span>Suivi Maman</span>
+            <img src="./images_suivi/logo.png" alt="Logo">
         </div>
         <nav>
             <a href="accueil.html">Accueil</a>
@@ -21,7 +21,13 @@
     </header>
 
     <main>
-        <h1 class="main-title">Mon suivi de grossesse</h1>
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Mon suivi de grossesse</h1>
+                <p>semaine après semaine, votre bébé grandi.</p>
+            </div>
+            <div class="hero-img"><img src="./images_suivi/foeutus2.png" alt=""></div>
+        </div>
         
         <section class="blue-section">
             <h2>Votre évolution actuelle</h2>
@@ -52,17 +58,42 @@
         </div>
     </main>
 
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-item">
-                <p><strong>Besoin d'aide ?</strong></p>
-                <p>Contacter un professionnel de santé</p>
+    <footer id="footer-shared">
+        <h3>Besoin d'aide ? Contacter un professionnel de santé</h3>
+        <section class="icons">
+            <div class="icon">
+                <div id="ico">
+                    <i class="fa-solid fa-phone"></i>
+                    <h4>Contact sage femme</h4>
+                </div>
+                <div>
+                    <h6>+225 07 00 00 00</h6>
+                    <h6>Disponible du lundi au vendredi</h6>
+                    <h6>8h00-18h00</h6>
+                </div>
             </div>
-            <div class="footer-item">
-                <p>Urgence : 112</p>
-                <p>Suivi Maman © 2026</p>
+            <div class="icon">
+                <div id="ico">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h4>Email</h4>
+                </div>
+                <div>
+                    <h6>suivimaman@gmail.com</h6>
+                    <h6>Nous répondons sous 24h</h6>
+                </div>
             </div>
-        </div>
+            <div class="icon">
+                <div id="ico">
+                    <i class="fa-solid fa-bell"></i>
+                    <h4>Urgence</h4>
+                </div>
+                <div>
+                    <h6>112</h6>
+                    <h6>En cas de problème grave</h6>
+                </div>
+            </div>
+        </section>
+        <h6>@ 2026 Suivi Maman - Tous droits réservés. ♡</h6>
     </footer>
 
     <script src="script.js"></script>

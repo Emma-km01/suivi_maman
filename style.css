@@ -263,6 +263,10 @@ input, select {
 }
 main {
     margin-bottom: 3%;
+    p {
+        margin-left: 5%;
+        font-size: 30px;
+    }
 }
 
 /*rdv.hml*/
@@ -321,7 +325,7 @@ main {
     height: 400px;
 }
 
-.doc img {
+#imdoc {
     border: 1px;
     background-color: #68c5ff5d;
     height: 60%;
@@ -329,9 +333,25 @@ main {
     height: 100%;
 }
 
-#doc1 {
+#idoc{
+    width: 30%;
+    height: auto;
 }
 
+.doteu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    h2 {
+        color: #6d717390;
+        font-size: 30px;
+    }
+}
+
+.he {
+    margin: 5%;
+}
 #const {
 }
 /* Footer (IMG_0872 bas) */

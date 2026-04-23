@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <title>Mes Rendez-vous</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
     <header>
-        <div class="logo"><img src="./images_suivi/logo.png" alt=""></div>
+        <div class="logo"><img src="./images_suivi/logo.png" id=""></div>
         <nav>
             <a href="accueil.html">Accueil</a>
             <a href="rdv.html" class="active">Rendez-vous</a>
-            <a href="suivi.html">Grossesse</a>
+            <a href="grossesse.html">Grossesse</a>
             <a href="ap_accouchement.html">Après accouchement</a>
         </nav>
     </header>
@@ -26,24 +27,30 @@
             <img src="./images_suivi/calendrier2.png" alt="" class="bg-cal">
         </div>
 
-        <h1>Automatisez vos rendez-vous</h1>
+        <div class="he"><h1>Automatisez vos rendez-vous</h1></div>
 
         <section class="rendv">
             <div class="doc">
-                <img src="./images_suivi/doc1.png" id="doc1">
+                <img src="./images_suivi/doc1.png" id="imdoc">
                 <div id="const">
                     <h1>Consultaion sage-femme</h1>
-                    <h2>(Ajouter un rendez-vous)</h2>
+                    <div class="doteu">
+                        <h2>(Ajouter un rendez-vous)</h2>
+                        <img src="./images_suivi/calendrier3.png" id="idoc">
+                    </div>
                     <button class="btn-ajouter" onclick="goTo('rdv.html')">+ Ajouter</button>
                     <button class="btn-modifier" onclick="goTo('rdv.html')">+ Modifier</button>
                     <button class="btn-supprimer" onclick="goTo('rdv.html')">+ Supprimer</button>
                 </div>
             </div>
             <div class="doc">
-                <img src="./images_suivi/doc2.png" alt="">
+                <img src="./images_suivi/doc2.png" id="imdoc">
                 <div id="const">
                     <h1>Consultation gynécologue</h1>
-                    <h2>(Ajouter un rendez-vous)</h2>
+                    <div class="doteu">
+                        <h2>(Ajouter un rendez-vous)</h2>
+                        <img src="./images_suivi/calendrier3.png" id="idoc">
+                    </div>
                     <button class="btn-ajouter" onclick="goTo('rdv.html')">+ Ajouter</button>
                     <button class="btn-modifier" onclick="goTo('rdv.html')">+ Modifier</button>
                     <button class="btn-supprimer" onclick="goTo('rdv.html')">+ Supprimer</button>
@@ -51,9 +58,45 @@
             </div>
         </section>
         <div id="liste-rdv-dynamique"></div>
-        <p class="info-note">⚠️ Pensez à enregistrer vos symptômes ou questions avant votre rendez-vous.</p>
+        <p class="info-note"><i class="fa-solid fa-circle-exclamation"></i>Pensez à enregistrer vos symptômes ou questions avant votre rendez-vous.</p>
     </main>
-    <footer id="footer-shared"></footer>
+    <footer id="footer-shared">
+        <h3>Besoin d'aide ? Contacter un professionnel de santé</h3>
+        <section class="icons">
+            <div class="icon">
+                <div id="ico">
+                    <i class="fa-solid fa-phone"></i>
+                    <h4>Contact sage femme</h4>
+                </div>
+                <div>
+                    <h6>+225 07 00 00 00</h6>
+                    <h6>Disponible du lundi au vendredi</h6>
+                    <h6>8h00-18h00</h6>
+                </div>
+            </div>
+            <div class="icon">
+                <div id="ico">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h4>Email</h4>
+                </div>
+                <div>
+                    <h6>suivimaman@gmail.com</h6>
+                    <h6>Nous répondons sous 24h</h6>
+                </div>
+            </div>
+            <div class="icon">
+                <div id="ico">
+                    <i class="fa-solid fa-bell"></i>
+                    <h4>Urgence</h4>
+                </div>
+                <div>
+                    <h6>112</h6>
+                    <h6>En cas de problème grave</h6>
+                </div>
+            </div>
+        </section>
+        <h6>@ 2026 Suivi Maman - Tous droits réservés. ♡</h6>
+    </footer>
     <script src="script.js"></script>
 </body>
 
