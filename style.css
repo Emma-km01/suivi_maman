@@ -135,6 +135,65 @@ input, select {
     border: #FD7E97;
 }
 
+/*grossesse*/
+.resume {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.cart {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  width: 25%;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* FORMULAIRE */
+.formulaire {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #FD7E97;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* RESULTAT */
+#resultat {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* CONSEILS */
+.infos {
+  background: #fff0f5;
+  margin: 20px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#gross {
+     width: 30%;
+    height: auto;
+}
+
 /* Responsive Grid (IMG_0872) */
 .grid-container {
     display: grid;
@@ -351,8 +410,6 @@ main {
 
 .he {
     margin: 5%;
-}
-#const {
 }
 /* Footer (IMG_0872 bas) */
 footer {

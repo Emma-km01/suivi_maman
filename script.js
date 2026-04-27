@@ -50,3 +50,43 @@ function checkPostPartum() {
         // Logique pour enlever le cadenas sur suivi.html
     }
 }
+
+function analyserBebe() {
+
+  let poids = document.getElementById("poids").value;
+  let taille = document.getElementById("taille").value;
+  let resultat = document.getElementById("resultat");
+
+  // Vérification
+  if (poids === "" || taille === "") {
+    resultat.innerText = "Veuillez remplir les deux champs.";
+    resultat.style.color = "red";
+    return;
+  }
+
+  poids = parseInt(poids);
+  taille = parseInt(taille);
+
+  // Analyse du poids
+  if (poids < 2000) {
+    resultat.innerText = "⚠️ Bébé un peu petit. Un suivi est conseillé.";
+    resultat.style.color = "orange";
+  } 
+  else if (poids >= 2000 && poids <= 4000) {
+    resultat.innerText = "💚 Croissance normale. Tout va bien.";
+    resultat.style.color = "green";
+  } 
+  else {
+    resultat.innerText = "⚠️ Bébé plus grand que la moyenne. À surveiller.";
+    resultat.style.color = "orange";
+  }
+
+  // Ajout info taille
+  if (taille < 40) {
+    resultat.innerText += " Taille légèrement faible.";
+  } 
+  else if (taille > 55) {
+    resultat.innerText += " Taille au-dessus de la moyenne.";
+  }
+
+}

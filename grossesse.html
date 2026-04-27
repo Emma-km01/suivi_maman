@@ -20,43 +20,58 @@
         </nav>
     </header>
 
-    <main>
-        <div class="hero">
+    <div class="hero">
             <div class="hero-text">
-                <h1>Mon suivi de grossesse</h1>
-                <p>semaine après semaine, votre bébé grandi.</p>
+                <h1>Suivi de grossesse</h1>
+                <p>Semaine apres semaine, votre bebe grandit.</p>
             </div>
             <div class="hero-img"><img src="./images_suivi/foeutus2.png" alt=""></div>
         </div>
-        
-        <section class="blue-section">
-            <h2>Votre évolution actuelle</h2>
-            <div class="evolution-card">
-                <h3>Semaine 12</h3>
-                <p>Votre bébé fait la taille d'un citron. C'est une étape clé du premier trimestre.</p>
-                <button class="btn-pink">Voir mes symptômes</button>
-            </div>
-        </section>
 
-        <h2 style="padding: 0 5%;">Conseils de la semaine</h2>
-        <div class="grid-container">
-            <div class="card-action">
-                <h3>Alimentation</h3>
-                <p>Découvrez les aliments essentiels pour vous et votre bébé.</p>
-                <button class="btn-blue">Lire</button>
-            </div>
-            <div class="card-action">
-                <h3>Repos</h3>
-                <p>Comment gérer la fatigue du premier trimestre ?</p>
-                <button class="btn-blue">Lire</button>
-            </div>
-            <div class="card-action">
-                <h3>Exercices</h3>
-                <p>Activités physiques douces recommandées.</p>
-                <button class="btn-blue">Lire</button>
-            </div>
-        </div>
-    </main>
+    <section class="resume">
+  <div class="cart">
+    <img src="./images_suivi/foeutus3.png" id="gross">
+    <p>Semaine</p>
+    <h2>--</h2>
+  </div>
+
+  <div class="cart">
+    <img src="./images_suivi/balence1.png" id="gross">
+    <p>Poids</p>
+    <h2>-- g</h2>
+  </div>
+
+  <div class="cart">
+    <img src="./images_suivi/mettre.png" id="gross">
+    <p>Taille</p>
+    <h2>-- cm</h2>
+  </div>
+</section>
+
+<section class="formulaire">
+  <h3>Mesures actuelles</h3>
+
+  <label>Poids estimé (g)</label>
+  <input type="number" id="poids" placeholder="Ex: 2500">
+
+  <label>Taille estimée (cm)</label>
+  <input type="number" id="taille" placeholder="Ex: 45">
+
+  <button onclick="analyserBebe()">Analyser</button>
+
+  <p id="resultat"></p>
+
+  <small>Ces informations sont indicatives et ne remplacent pas un avis médical.</small>
+</section>
+
+<section class="infos">
+  <h3>Conseils du jour</h3>
+  <ul>
+    <li>💧 Hydratez-vous régulièrement</li>
+    <li>🥗 Mangez équilibré</li>
+    <li>😴 Reposez-vous suffisamment</li>
+  </ul>
+</section>
 
     <footer id="footer-shared">
         <h3>Besoin d'aide ? Contacter un professionnel de santé</h3>
