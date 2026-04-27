@@ -242,31 +242,31 @@ button {
 .btn-bleu {
     background-color: #1293D9;
     border: 1px;
-    height: 10%;
-    width: 20%;
+    height: 15%;
+    width: 25%;
     color: white;
-    font-size: 110%;
-    border-radius: 20px;
+    font-size: 100%;
+    border-radius: 15px;
 }
 
 .btn-rose {
     background-color: #FD7E97;
     border: 1px;
-    height: 10%;
-    width: 20%;
+    height: 15%;
+    width: 25%;
     color: white;
-    font-size: 110%;
-    border-radius: 20px;
+    font-size: 100%;
+    border-radius: 15px;
 }
 
 .btn-gris {
     background-color: #6D7173;
     border: 1px;
-    height: 10%;
-    width: 20%;
+    height: 15%;
+    width: 25%;
     color: white;
-    font-size: 110%;
-    border-radius: 20px;
+    font-size: 100%;
+    border-radius: 15px;
 }
 
 
@@ -320,7 +320,7 @@ button {
     width: 90%;
     align-items: center;
 }
-main {
+.phrase {
     margin-bottom: 3%;
     p {
         margin-left: 5%;
@@ -432,4 +432,110 @@ footer {
     justify-content: center;
     gap: 30%;
     padding: 2%;
+}
+
+/*ap-accouchement*/
+
+/* CONSEILS */
+.conseils {
+    display: flex;
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    justify-content: space-between;
+    img {
+        width: 62%;
+        height: auto;
+        margin-left: 42%;
+    }
+}
+
+/* SUIVI */
+.suivi {
+    margin: 20px;
+    border: 1px;
+    border-radius: 15px;
+    background-color: white;
+    h2 {
+        margin: 20px;
+        margin-bottom: -20px;
+    }
+}
+
+.sv {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+.boite-suivi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #E5EEF7;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 15px;
+    width:45%;
+    height: auto;
+    img {
+        width: 30%;
+        height: auto;
+    }
+}
+
+#sv {
+    margin-right: 20%;
+    text-align: center;
+}
+
+/*conseil.html*/
+
+.soins {
+    margin: 10px;
+    border: 1px;
+    border-radius: 20px;
+    background-color: #68c5ff69;
+    h2 {
+        color: #FD7E97;
+        text-align: center;
+    }
+}
+
+#soins {
+    display: flex;
+    align-items: center;
+}
+
+.recup {
+    margin: 10px;
+    border: 1px;
+    border-radius: 20px;
+    background-color: #E5EEF7;
+    h2 {
+        color: #1293D9;
+        text-align: center;
+    }
+}
+
+#recup {
+    display: flex;
+    align-items: center;
+}
+
+.prati {
+    margin: 10px;
+    border: 1px;
+    border-radius: 20px;
+    background-color: #FFE4E9;
+    h2 {
+        color: #757575;
+        text-align: center;
+    }
+}
+
+#prati {
+    display: flex;
+    align-items: center;
 }

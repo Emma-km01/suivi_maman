@@ -90,3 +90,46 @@ function analyserBebe() {
   }
 
 }
+
+//AP_accouchement//
+
+// Charger les données au démarrage
+window.onload = function () {
+    let poids = localStorage.getItem("poids");
+    let sommeil = localStorage.getItem("sommeil");
+
+    if (poids) {
+        document.getElementById("poids").textContent = poids + " kg";
+    }
+
+    if (sommeil) {
+        document.getElementById("sommeil").textContent = sommeil + " heures";
+    }
+};
+
+// Ajouter poids
+function ajouterPoids() {
+    let poids = prompt("Entrez le poids du bébé (kg) :");
+
+    if (poids) {
+        localStorage.setItem("poids", poids); // stockage
+        document.getElementById("poids").textContent = poids + " kg";
+    }
+}
+
+// Ajouter sommeil
+function ajouterSommeil() {
+    let sommeil = prompt("Nombre d'heures de sommeil :");
+
+    if (sommeil) {
+        localStorage.setItem("sommeil", sommeil); // stockage
+        document.getElementById("sommeil").textContent = sommeil + " heures";
+    }
+}
+
+function effacerDonnees() {
+    localStorage.clear();
+
+    document.getElementById("poids").textContent = "-- kg";
+    document.getElementById("sommeil").textContent = "-- heures";
+}
