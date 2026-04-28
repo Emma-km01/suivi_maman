@@ -61,6 +61,17 @@ nav a:hover, nav a.active {
     font-weight: 800;
 }
 
+.connex {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.connet {
+    color: #1293D9;
+    cursor: pointer;
+}
+
 .hero {
     display: flex;
     background-color: #E5EEF7;
@@ -78,7 +89,6 @@ nav a:hover, nav a.active {
     background-color: #FD7E97;
     color: white;
     width: 280px;
-    height: 40px;
     font-size: 18px;
     border-radius: 10px;
     border: #FD7E97;
@@ -128,7 +138,6 @@ input, select {
     background-color: #FD7E97;
     color: white;
     width: 110px;
-    height: 35px;
     font-size: 18px;
     margin-left: 45%;
     border-radius: 10px;
@@ -242,17 +251,16 @@ button {
 .btn-bleu {
     background-color: #1293D9;
     border: 1px;
-    height: 15%;
     width: 25%;
     color: white;
     font-size: 100%;
     border-radius: 15px;
+    margin-top: 7%;
 }
 
 .btn-rose {
     background-color: #FD7E97;
     border: 1px;
-    height: 15%;
     width: 25%;
     color: white;
     font-size: 100%;
@@ -262,11 +270,11 @@ button {
 .btn-gris {
     background-color: #6D7173;
     border: 1px;
-    height: 15%;
     width: 25%;
     color: white;
     font-size: 100%;
     border-radius: 15px;
+    margin-top: 5%;
 }
 
 
@@ -495,7 +503,7 @@ footer {
 .soins {
     margin: 10px;
     border: 1px;
-    border-radius: 20px;
+    border-radius: 30px;
     background-color: #68c5ff69;
     h2 {
         color: #FD7E97;
@@ -511,7 +519,7 @@ footer {
 .recup {
     margin: 10px;
     border: 1px;
-    border-radius: 20px;
+    border-radius: 30px;
     background-color: #E5EEF7;
     h2 {
         color: #1293D9;
@@ -527,7 +535,7 @@ footer {
 .prati {
     margin: 10px;
     border: 1px;
-    border-radius: 20px;
+    border-radius: 30px;
     background-color: #FFE4E9;
     h2 {
         color: #757575;
