@@ -1,0 +1,76 @@
+# Suivi Maman
+
+## Description
+
+**Suivi Maman** est une application web qui permet d’accompagner les femmes enceintes dans le suivi de leur grossesse.
+Elle offre des fonctionnalités simples pour suivre les semaines de grossesse, enregistrer des informations importantes et gérer les rendez-vous.
+
+---
+
+## Fonctionnalités
+
+* Inscription et connexion des utilisatrices
+* Suivi de la grossesse (semaine, poids, taille, etc.)
+* Gestion des rendez-vous
+* Suppression des rendez-vous
+* Interface simple et responsive
+
+---
+
+## Technologies utilisées
+
+* HTML
+* CSS
+* JavaScript
+
+---
+
+## Structure du projet
+
+* `index.html` : page d’accueil
+* `inscription.html` : page d’inscription
+* `connexion.html` : page de connexion
+* `grossesse.html` : suivi de grossesse
+* `style.css` : styles du site
+* `script.js` : logique JavaScript
+
+---
+
+## Installation
+
+1. Cloner le projet :
+
+```bash
+git clone https://github.com/Emma-km01/suivi_maman.git
+```
+
+2. Ouvrir le dossier :
+
+```bash
+cd suivi_maman
+```
+
+3. Lancer le projet :
+
+* Ouvrir `index.html` dans un navigateur
+
+---
+
+## Objectif
+
+Ce projet a pour but de faciliter le suivi de grossesse de manière simple et accessible, tout en permettant aux utilisatrices de mieux organiser leurs informations.
+
+---
+
+## Améliorations possibles
+
+* Ajout d’une base de données
+* Système de notifications
+* Version mobile (application)
+* Sécurité avancée pour les comptes
+
+---
+
+## Auteur
+
+Projet réalisé par Emmanuela Kouame
