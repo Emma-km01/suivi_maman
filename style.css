@@ -65,6 +65,7 @@ nav a:hover, nav a.active {
     display: flex;
     justify-content: center;
     gap: 10px;
+    margin-bottom: 20%;
 }
 
 .connet {
@@ -80,6 +81,12 @@ nav a:hover, nav a.active {
     font-size: 60px;
     }
 }
+
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
 .hero-text {
     margin-left: 50px;
     padding-top: 40px;
@@ -286,9 +293,14 @@ button {
     gap: 30px;              /* Crée l'espace entre l'article 1 et l'article 2 */
     margin: 0 auto;      /* Espace extérieur haut/bas et centrage du bloc */
     width: 90%;
+    margin-bottom: 5%;
     a {
         color: #1293D9;
     }
+}
+
+.artl {
+    margin-left: 10%;
 }
 
 .recent-articles{
@@ -327,13 +339,6 @@ button {
     padding: 50px;
     width: 90%;
     align-items: center;
-}
-.phrase {
-    margin-bottom: 3%;
-    p {
-        margin-left: 5%;
-        font-size: 30px;
-    }
 }
 
 /*rdv.hml*/
@@ -396,8 +401,8 @@ button {
     border: 1px;
     background-color: #68c5ff5d;
     height: 60%;
-    width: 15%;
-    height: 100%;
+    width: 30%;
+    height: auto;
 }
 
 #idoc{
@@ -410,14 +415,24 @@ button {
     align-items: center;
     justify-content: space-between;
     padding: 0 100px;
-    h2 {
+}
+
+#rdv-sage {
         color: #6d717390;
-        font-size: 30px;
-    }
+}
+
+#rdv-gyneco {
+        color: #6d717390;
 }
 
 .he {
     margin: 5%;
+}
+
+.info-note {
+    text-align: center;
+    margin-top: 1%;
+    margin-bottom: 2%;
 }
 /* Footer (IMG_0872 bas) */
 footer {

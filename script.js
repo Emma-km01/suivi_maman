@@ -11,85 +11,260 @@ const dataApp = {
 function goTo(page) {
     window.location.href = page;
 }
-
-// Gestion des événements (DOM)
-document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. Gestion du changement de statut (IMG_0871)
-    const selectStatut = document.getElementById('selectStatut');
-    if(selectStatut) {
-        selectStatut.addEventListener('change', (e) => {
-            dataApp.userStatus = e.target.value;
-            console.log("Statut choisi : " + dataApp.userStatus);
-        });
+//rdv
+
+// Récupérer / sauvegarder
+function getRdv() {
+    return JSON.parse(localStorage.getItem("rdvs")) || [];
+}
+
+function saveRdv(rdvs) {
+    localStorage.setItem("rdvs", JSON.stringify(rdvs));
+}
+
+// Ajouter un RDV
+function ajouterRdv(type) {
+    const date = prompt("Entrer la date du rendez-vous (YYYY-MM-DD)");
+
+    if (!date) return;
+
+    const rdvs = getRdv();
+    rdvs.push({ type, date });
+
+    saveRdv(rdvs);
+
+    afficherDernierRdv();
+    afficherListe();
+}
+
+// Modifier le dernier RDV
+function modifierRdv(type) {
+    let rdvs = getRdv();
+
+    let index = rdvs.map(r => r.type).lastIndexOf(type);
+
+    if (index === -1) {
+        alert("Aucun rendez-vous à modifier");
+        return;
     }
 
-    // 2. Remplissage automatique des RDV (IMG_0873)
-    const containerRdv = document.getElementById('rdv-list');
-    if(containerRdv) {
-        dataApp.rdv.forEach(item => {
-            const card = document.createElement('div');
-            card.className = "blue-section";
-            card.style.display = "flex";
-            card.innerHTML = `
-                <img src="${item.img}" width="80">
-                <div style="margin-left:20px; text-align:left;">
-                    <h3>${item.titre}</h3>
-                    <p>(Ajouter un rendez-vous)</p>
-                    <button class="btn-submit" onclick="alert('Ajouté !')">+ Ajouter</button>
-                </div>
-            `;
-            containerRdv.appendChild(card);
-        });
-    }
-});
+    const nouvelleDate = prompt("Nouvelle date (YYYY-MM-DD)");
 
-// Fonction pour débloquer la session post-partum (Logique JS)
-function checkPostPartum() {
-    if(dataApp.userStatus === "maman") {
-        // Logique pour enlever le cadenas sur suivi.html
+    if (!nouvelleDate) return;
+
+    rdvs[index].date = nouvelleDate;
+
+    saveRdv(rdvs);
+
+    afficherDernierRdv();
+    afficherListe();
+}
+
+// Supprimer dernier RDV
+function supprimerDernierRdv(type) {
+    let rdvs = getRdv();
+
+    let index = rdvs.map(r => r.type).lastIndexOf(type);
+
+    if (index === -1) {
+        alert("Aucun rendez-vous à supprimer");
+        return;
+    }
+
+    if (!confirm("Supprimer ce rendez-vous ?")) return;
+
+    rdvs.splice(index, 1);
+
+    saveRdv(rdvs);
+
+    afficherDernierRdv();
+    afficherListe();
+}
+
+// Afficher les cartes (haut)
+function afficherDernierRdv() {
+    const rdvs = getRdv();
+
+    const sage = rdvs.filter(r => r.type === "sage-femme").pop();
+    const gyneco = rdvs.filter(r => r.type === "gynecologue").pop();
+
+    const elSage = document.getElementById("rdv-sage");
+    const elGyneco = document.getElementById("rdv-gyneco");
+
+    if (elSage) {
+        elSage.textContent = sage
+            ? `📅 ${sage.date}`
+            : "(Aucun rendez-vous)";
+    }
+
+    if (elGyneco) {
+        elGyneco.textContent = gyneco
+            ? `📅 ${gyneco.date}`
+            : "(Aucun rendez-vous)";
     }
 }
 
-function analyserBebe() {
+// Liste complète (bas)
+function afficherListe() {
+    const container = document.getElementById("liste-rdv-dynamique");
 
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    const rdvs = getRdv();
+
+    if (rdvs.length === 0) {
+        container.innerHTML = "";
+        return;
+    }
+
+    rdvs.forEach((rdv, index) => {
+        const div = document.createElement("div");
+        div.className = "rdv-item";
+
+        div.innerHTML = `
+            <p><strong>${rdv.type}</strong> : ${rdv.date}</p>
+            <button onclick="supprimerRdv(${index})">Supprimer</button>
+        `;
+
+        container.appendChild(div);
+    });
+}
+
+// Supprimer depuis la liste
+function supprimerRdv(index) {
+    let rdvs = getRdv();
+
+    if (!confirm("Supprimer ce rendez-vous ?")) return;
+
+    rdvs.splice(index, 1);
+
+    saveRdv(rdvs);
+
+    afficherDernierRdv();
+    afficherListe();
+}
+
+// Rappel veille
+function verifierRappel() {
+    const rdvs = getRdv();
+    const aujourdHui = new Date();
+
+    rdvs.forEach(rdv => {
+        const dateRdv = new Date(rdv.date);
+
+        const demain = new Date();
+        demain.setDate(aujourdHui.getDate() + 1);
+
+        if (dateRdv.toDateString() === demain.toDateString()) {
+            alert("⚠️ Rappel : Vous avez un rendez-vous demain !");
+        }
+    });
+}
+
+// Lancement automatique
+document.addEventListener("DOMContentLoaded", () => {
+    afficherDernierRdv();
+    afficherListe();
+    verifierRappel();
+});
+
+//grossesse
+
+function mettreAJourSemaine() {
+  let semaine = document.getElementById("semaineInput").value;
+
+  if (semaine === "") {
+    alert("Veuillez entrer une semaine");
+    return;
+  }
+
+  semaine = parseInt(semaine);
+
+  let estimation = estimerBebe(semaine);
+
+  document.getElementById("semaine").textContent = semaine + " SA";
+  document.getElementById("poidsAffiche").textContent = estimation.poids + " g";
+  document.getElementById("tailleAffiche").textContent = estimation.taille + " cm";
+
+  sauvegarderDonnees(semaine, estimation.poids, estimation.taille);
+}
+
+function estimerBebe(semaine) {
+
+  let poids, taille;
+
+  if (semaine <= 20) {
+    poids = 300; taille = 25;
+  } else if (semaine <= 28) {
+    poids = 1000; taille = 35;
+  } else if (semaine <= 36) {
+    poids = 2500; taille = 47;
+  } else {
+    poids = 3200; taille = 50;
+  }
+
+  return { poids, taille };
+}
+
+function analyserBebe() {
   let poids = document.getElementById("poids").value;
   let taille = document.getElementById("taille").value;
+  let semaine = parseInt(document.getElementById("semaineInput").value);
+
   let resultat = document.getElementById("resultat");
 
-  // Vérification
   if (poids === "" || taille === "") {
-    resultat.innerText = "Veuillez remplir les deux champs.";
+    resultat.innerText = "Veuillez remplir les champs.";
     resultat.style.color = "red";
     return;
   }
 
+  let estimation = estimerBebe(semaine);
+
   poids = parseInt(poids);
   taille = parseInt(taille);
 
-  // Analyse du poids
-  if (poids < 2000) {
-    resultat.innerText = "⚠️ Bébé un peu petit. Un suivi est conseillé.";
+  let message = "";
+
+  if (poids < estimation.poids - 200) {
+    message += "⚠️ Poids inférieur à la moyenne. ";
     resultat.style.color = "orange";
-  } 
-  else if (poids >= 2000 && poids <= 4000) {
-    resultat.innerText = "💚 Croissance normale. Tout va bien.";
+  } else if (poids > estimation.poids + 200) {
+    message += "⚠️ Poids supérieur à la moyenne. ";
+    resultat.style.color = "orange";
+  } else {
+    message += "💚 Poids normal. ";
     resultat.style.color = "green";
-  } 
-  else {
-    resultat.innerText = "⚠️ Bébé plus grand que la moyenne. À surveiller.";
-    resultat.style.color = "orange";
   }
 
-  // Ajout info taille
-  if (taille < 40) {
-    resultat.innerText += " Taille légèrement faible.";
-  } 
-  else if (taille > 55) {
-    resultat.innerText += " Taille au-dessus de la moyenne.";
+  if (taille < estimation.taille - 3) {
+    message += "Taille légèrement faible.";
+  } else if (taille > estimation.taille + 3) {
+    message += "Taille au-dessus de la moyenne.";
   }
 
+  resultat.innerText = message;
 }
+
+function sauvegarderDonnees(semaine, poids, taille) {
+  const data = { semaine, poids, taille };
+  localStorage.setItem("suiviBebe", JSON.stringify(data));
+}
+
+function chargerDonnees() {
+  const data = JSON.parse(localStorage.getItem("suiviBebe"));
+
+  if (!data) return;
+
+  document.getElementById("semaine").textContent = data.semaine + " SA";
+  document.getElementById("poidsAffiche").textContent = data.poids + " g";
+  document.getElementById("tailleAffiche").textContent = data.taille + " cm";
+}
+
+window.onload = chargerDonnees;
 
 //AP_accouchement//
 

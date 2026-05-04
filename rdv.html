@@ -12,53 +12,53 @@
     <header>
         <div class="logo"><img src="./images_suivi/logo.png" id=""></div>
         <nav>
-            <a href="accueil.html">Accueil</a>
+            <a href="index.html">Accueil</a>
             <a href="rdv.html" class="active">Rendez-vous</a>
             <a href="grossesse.html">Grossesse</a>
             <a href="ap_accouchement.html">Après accouchement</a>
         </nav>
     </header>
-    <section class="phrase">
+    
         <div class="hero">
-            <div class="page-intro">
+            <div class="hero-text">
                 <h1>Mes rendez-vous</h1>
                 <p>Ajouter, consulter et gérez facilement vos rendez-vous.</p>
             </div>
-            <img src="./images_suivi/calendrier2.png" alt="" class="bg-cal">
+            <div class="hero-img"><img src="./images_suivi/calendrier2.png" alt=""></div>
         </div>
-
+    <section>
         <div class="he"><h1>Automatisez vos rendez-vous</h1></div>
 
         <section class="rendv">
             <div class="doc">
                 <img src="./images_suivi/doc1.png" id="imdoc">
-                <div id="const">
+                <div class="consta">
                     <h1>Consultaion sage-femme</h1>
                     <div class="doteu">
-                        <h2>(Ajouter un rendez-vous)</h2>
+                        <h2 id="rdv-sage">(Aucun rendez-vous)</h2>
                         <img src="./images_suivi/calendrier3.png" id="idoc">
                     </div>
-                    <button class="btn-ajouter" onclick="goTo('rdv.html')">+ Ajouter</button>
-                    <button class="btn-modifier" onclick="goTo('rdv.html')">+ Modifier</button>
-                    <button class="btn-supprimer" onclick="goTo('rdv.html')">+ Supprimer</button>
+                    <button class="btn-ajouter" onclick="ajouterRdv('sage-femme')">+ Ajouter</button>
+                    <button class="btn-modifier" onclick="modifierRdv('sage-femme')">+ Modifier</button>
+                    <button class="btn-supprimer" onclick="supprimerDernierRdv('sage-femme')">+ Supprimer</button>
                 </div>
             </div>
             <div class="doc">
                 <img src="./images_suivi/doc2.png" id="imdoc">
-                <div id="const">
+                <div class="consta">
                     <h1>Consultation gynécologue</h1>
                     <div class="doteu">
-                        <h2>(Ajouter un rendez-vous)</h2>
+                        <h2 id="rdv-gyneco">(Aucun rendez-vous)</h2>
                         <img src="./images_suivi/calendrier3.png" id="idoc">
                     </div>
-                    <button class="btn-ajouter" onclick="goTo('rdv.html')">+ Ajouter</button>
-                    <button class="btn-modifier" onclick="goTo('rdv.html')">+ Modifier</button>
-                    <button class="btn-supprimer" onclick="goTo('rdv.html')">+ Supprimer</button>
+                    <button class="btn-ajouter" onclick="ajouterRdv('gynecologue')">+ Ajouter</button>
+                    <button class="btn-modifier" onclick="modifierRdv('gynecologue')">+ Modifier</button>
+                    <button class="btn-supprimer" onclick="supprimerDernierRdv('gynecologue')">+ Supprimer</button>
                 </div>
             </div>
         </section>
         <div id="liste-rdv-dynamique"></div>
-        <p class="info-note"><i class="fa-solid fa-circle-exclamation"></i>Pensez à enregistrer vos symptômes ou questions avant votre rendez-vous.</p>
+        <p class="info-note"><i class="fa-solid fa-circle-exclamation"></i>  Pensez à enregistrer vos symptômes ou questions avant votre rendez-vous.</p>
     </section>
     <footer id="footer-shared">
         <h3>Besoin d'aide ? Contacter un professionnel de santé</h3>

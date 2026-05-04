@@ -13,9 +13,9 @@
             <img src="./images_suivi/logo.png" alt="Logo">
         </div>
         <nav>
-            <a href="accueil.html">Accueil</a>
+            <a href="index.html">Accueil</a>
             <a href="rdv.html">Rendez-vous</a>
-            <a href="suivi.html" class="active">Grossesse</a>
+            <a href="grossesse.html" class="active">Grossesse</a>
             <a href="ap_accouchement.html">Après accouchement</a>
         </nav>
     </header>
@@ -28,33 +28,46 @@
             <div class="hero-img"><img src="./images_suivi/foeutus2.png" alt=""></div>
         </div>
 
+
+    <section class="formulaire">
     <section class="resume">
   <div class="cart">
     <img src="./images_suivi/foeutus3.png" id="gross">
     <p>Semaine</p>
-    <h2>--</h2>
+    <h2 id="semaine">-- SA</h2>
   </div>
 
   <div class="cart">
     <img src="./images_suivi/balence1.png" id="gross">
     <p>Poids</p>
-    <h2>-- g</h2>
+    <h2 id="poidsAffiche">-- g</h2>
   </div>
 
   <div class="cart">
     <img src="./images_suivi/mettre.png" id="gross">
     <p>Taille</p>
-    <h2>-- cm</h2>
+    <h2 id="tailleAffiche">-- cm</h2>
   </div>
+</section>
+<h3>📊 Suivi de grossesse</h3>
+
+  <!-- Semaine -->
+  <label for="semaineInput">Semaine de grossesse (SA)</label>
+  <input type="number" id="semaineInput" placeholder="Ex: 24">
+
+  <button onclick="mettreAJourSemaine()">Valider la semaine</button>
+
+  <small><i class="fa-solid fa-circle-exclamation"></i>  Ces valeurs sont des estimations basées sur la semaine de grossesse. Les mesures ici servent à comparer avec vos informations réelles.</small>
 </section>
 
 <section class="formulaire">
-  <h3>Mesures actuelles</h3>
+  <!-- Mesures bébé -->
+  <h4>Mesures réelles du bébé</h4>
 
-  <label>Poids estimé (g)</label>
+  <label for="poids">Poids estimé (g)</label>
   <input type="number" id="poids" placeholder="Ex: 2500">
 
-  <label>Taille estimée (cm)</label>
+  <label for="taille">Taille estimée (cm)</label>
   <input type="number" id="taille" placeholder="Ex: 45">
 
   <button onclick="analyserBebe()">Analyser</button>
